@@ -22,4 +22,7 @@ library(gt)
 enrollment <- read_excel("class_enrollment_summary_by_term2.18.20.xlsx", skip=3) %>% clean_names() %>% filter(!is.na(course_name))
 
 enrollment %>% group_by(course_department) %>% summarize(totaldepartment = sum(total)) %>% arrange(desc(totaldepartment))
+
+yep <- enrollment %>% gather(key = "department", value = "yep", c(course_department)) %>% group_by(yep) %>% 
+yep
 ```
